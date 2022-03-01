@@ -34,4 +34,23 @@ let arr = [
   234, 458, 34, 23, 68, 29, 394, 583, 284, 20, 349, 333, 192, 849, 10, 25, 66,
 ];
 
-bubbleSort(arr);
+// bubbleSort(arr);
+
+const recursiveBubble = (arr, n) => {
+  if (n == 1) {
+    console.log(arr);
+    return;
+  }
+
+  for (let i = 0; i < n - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      let tmp = arr[i];
+      arr[i] = arr[i + 1];
+      arr[i + 1] = tmp;
+    }
+  }
+
+  recursiveBubble(arr, n - 1);
+};
+
+recursiveBubble(arr, arr.length);
