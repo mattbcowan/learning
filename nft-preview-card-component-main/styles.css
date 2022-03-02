@@ -1,0 +1,130 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-background: hsl(217, 54%, 11%);
+  --main-card-bg: hsl(216, 50%, 16%);
+  --very-dark-blue: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  background-color: var(--main-background);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  transition: all ease 400ms;
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+.card {
+  background-color: var(--main-card-bg);
+  color: var(--white);
+  max-width: 350px;
+  height: 596px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+.card--container {
+  padding: 24px;
+}
+
+.card--header {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card--image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: 500ms ease;
+  backface-visibility: hidden;
+}
+
+.card--header-hover {
+  transition: 500ms ease;
+  opacity: 0;
+  position: absolute;
+  background-color: rgba(0, 255, 247, 0.5);
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card--header:hover .card--header-hover {
+  opacity: 1;
+}
+
+.card--heading {
+  font-size: 22px;
+}
+
+.card--description {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--soft-blue);
+}
+
+.card--footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card--footer > span {
+  font-size: 16px;
+  color: var(--soft-blue);
+}
+
+.card--avatar {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.card--data {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card--data-lockup {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.card--data :first-child {
+  color: var(--cyan);
+}
+
+.card--data > :nth-child(2) {
+  color: var(--soft-blue);
+}
+
+.card--divider {
+  border: 1px solid var(--very-dark-blue);
+  margin-bottom: 16px;
+}
