@@ -37,6 +37,7 @@ let arr = [
 // bubbleSort(arr);
 
 const recursiveBubble = (arr, n) => {
+  // Base case
   if (n == 1) {
     console.log(arr);
     return;
