@@ -1,22 +1,19 @@
 function validAnagram(str1, str2) {
-  let str1Vals = {};
-  let str2Vals = {};
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  let lookup = {};
 
   for (let letter of str1) {
-    str1Vals[letter] = ++str1Vals[letter] || 1;
+    lookup[letter] ? ++lookup[letter] : (lookup[letter] = 1);
   }
 
   for (let letter of str2) {
-    str2Vals[letter] = ++str2Vals[letter] || 1;
-  }
-
-  for (let key in str1Vals) {
-    if (!(key in str2Vals)) {
+    if (!lookup[letter]) {
       return false;
     }
-    if (str1Vals[key] !== str2Vals[key]) {
-      return false;
-    }
+    --lookup[letter];
   }
   return true;
 }
