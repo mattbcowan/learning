@@ -7,11 +7,11 @@ function isSubsequence(n, m) {
   let p1 = 0;
 
   for (let p2 = 0; p2 < m.length; p2++) {
+    console.log(n[p1], n[p2]);
     if (p1 === n.length - 1) {
       console.log(true);
       return true;
     }
-    console.log(n[p1], n[p2]);
     if (n[p1] === m[p2]) {
       p1++;
     }
